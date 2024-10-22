@@ -1,11 +1,25 @@
-/* To refer a custom class we have to use a dot */
-.title{
-    text-align: center;
-    background-color: black;
-    color: white;
+html, body{
+    background-color: #2f4f30;
+    margin: 0px;
 }
 
-html, body{
-    margin: 0px;
-    background-color: #2f4f30;
+/* To refer a custom class we have to use a dot */
+.my-title{
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-style {
+    position: relative;
+    width: 150px;
+    left: 100px;
+    margin-left: -75px;
+}
+
+/* To refer a id we have to use # */
+#player-cards, #computer-cards  {
+    height: 250px;
 }
