@@ -1,0 +1,11 @@
+/* To refer a custom class we have to use a dot */
+.title{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+html, body{
+    margin: 0px;
+    background-color: #2f4f30;
+}
