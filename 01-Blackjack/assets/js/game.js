@@ -3,6 +3,14 @@ let deck = [];
 const types = ['C','D','H','S'];
 const specials = ['A','J','Q','K'];
 
+let playerPoints = 0;
+let computerPoints = 0;
+
+// HTML references
+const btnNewGame = document.querySelector('#btnNewGame');
+const btnTakeCard = document.querySelector('#btnTakeCard');
+const btnEndGame = document.querySelector('#btnEndGame');
+
 // Functions
 const createDeck = () => {
 
@@ -39,4 +47,29 @@ const takeCard = () => {
     return card;
 }
 
-takeCard();
+const cardValue = (card) => {
+
+    const value = card.substring(0, card.length-1);
+    let points = 0;
+
+    if (isNaN(value)) {
+
+        points = (value === 'A') ? 11 : 10;
+        
+    } else {
+        points = value * 1;
+    }
+}
+
+cardValue('2D');
+
+// Events
+btnTakeCard.addEventListener('click', () => {
+
+    const card = takeCard();
+
+    playerPoints = playerPoints + cardValue(card);
+
+    console.log(card);
+
+});
