@@ -19,6 +19,24 @@ const createDeck = () => {
     }
 
     console.log(deck);
+    deck = _.shuffle(deck);
+    console.log(deck);
 }
 
 createDeck();
+
+const takeCard = () => {
+
+    if (deck.length === 0) {
+        throw 'There is no cards in the deck';
+    }
+
+    const card = deck.pop();
+
+    console.log(card);
+    console.log(deck);
+
+    return card;
+}
+
+takeCard();
