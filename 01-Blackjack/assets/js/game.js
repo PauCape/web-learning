@@ -11,6 +11,13 @@ const btnNewGame = document.querySelector('#btnNewGame');
 const btnTakeCard = document.querySelector('#btnTakeCard');
 const btnEndGame = document.querySelector('#btnEndGame');
 
+const playerPointsHTML = document.querySelector('#playerPoints');
+const computerPointsHTML = document.getElementById('#computerPoints'); 
+
+const playerCards = document.querySelector('#playerCards');
+const computerCards = document.querySelector('#computerCards');
+
+
 // Functions
 const createDeck = () => {
 
@@ -54,10 +61,11 @@ const cardValue = (card) => {
 
     if (isNaN(value)) {
 
-        points = (value === 'A') ? 11 : 10;
+        return points = (value === 'A') ? 11 : 10;
         
     } else {
-        points = value * 1;
+
+        return points = value * 1;
     }
 }
 
@@ -69,6 +77,14 @@ btnTakeCard.addEventListener('click', () => {
     const card = takeCard();
 
     playerPoints = playerPoints + cardValue(card);
+
+    playerPointsHTML.innerText = playerPoints;
+
+    const imageCard = document.createElement('img');
+    imageCard.src = `assets/cards/${card}.png`;
+    imageCard.classList.add('card-style');
+
+    playerCards.append(imageCard);
 
     console.log(card);
 
